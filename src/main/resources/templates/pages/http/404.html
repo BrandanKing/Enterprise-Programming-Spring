@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/default}">
+	<body>
+		<main id="app" layout:fragment="content">
+			<div th:replace="fragments/http/navigation :: navigation"></div>
+			<section class="main-content position-relative max-height-vh-100 h-100 grid p-3">
+				<div class="g-col-12">
+					<h1>404</h1>
+					<p>Content Not Found</p>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

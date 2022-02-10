@@ -1,0 +1,117 @@
+/*************************************\
+* ANCHOR BOOTSTRAP VARIABLE OVERRIDES *
+\*************************************/
+
+/*************\
+* ANCHOR GRID *
+\*************/
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+);
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+);
+
+/****************\
+* ANCHOR SPACING *
+\****************/
+
+$spacer: 0.5rem;
+
+$spacers: (
+	0: 0,
+	1: $spacer,
+	2: $spacer * 2,
+	3: $spacer * 3,
+	4: $spacer * 4,
+	5: $spacer * 5,
+);
+
+/********************\
+* ANCHOR FONT FAMILY *
+\********************/
+
+$font-family-base: 'Karla', sans-serif;
+
+/**********************\
+* ANCHOR THEME COLOURS *
+\**********************/
+
+$white: #fff;
+$black: #000;
+
+$primary: #d63384;
+
+$body-bg: #f0f2f5;
+
+/******************\
+* ANCHOR FONT SIZE *
+\******************/
+
+$rfs-base-value: 1.125rem;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+$h1-font-size: $font-size-base * 3;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$font-sizes: (
+	3xl: $h1-font-size,
+	2xl: $h2-font-size,
+	xl: $h3-font-size,
+	lg: $h5-font-size,
+	md: $font-size-base,
+	sm: $font-size-base * 0.875,
+	xs: $font-size-base * 0.75,
+);
+
+$headings-margin-bottom: $spacer * 2;
+
+/******************\
+* ANCHOR OFFCANVAS *
+\******************/
+
+$offcanvas-horizontal-width: 15.625rem;
+
+/****************\
+* ANCHOR BORDERS *
+\****************/
+
+$border-radius-lg: 0.75rem;
+
+/*********************\
+* ANCHOR FONT AWESOME *
+\*********************/
+
+$fa-font-path: '../../webfonts';
+
+/*****************\
+* ANCHOR CSS GRID *
+\*****************/
+
+$enable-cssgrid: true;
+
+/**************\
+* ANCHOR MODAL *
+\**************/
+
+$modal-header-padding-y: 0.5rem;
+
+/*************\
+* ANCHOR FORM *
+\*************/
+
+$form-select-focus-box-shadow: none;
+$input-focus-box-shadow: none;

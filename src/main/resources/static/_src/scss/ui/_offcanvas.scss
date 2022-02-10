@@ -1,0 +1,7 @@
+.offcanvas {
+	background: none;
+	@include media-breakpoint-up(sm) {
+		transform: none;
+		visibility: visible;
+	}
+}

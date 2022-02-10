@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/default}">
+	<body>
+		<main id="app" layout:fragment="content">
+			<div th:replace="fragments/http/navigation :: navigation"></div>
+			<section class="main-content position-relative max-height-vh-100 h-100 grid p-3">
+				<div th:if="${alert}" class="g-col-12 alert alert-primary alert-dismissible fade show mb-0" role="alert">
+					<span th:text="${alert}"></span>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+				<div class="g-col-12">
+					<h1>Film Database</h1>
+				</div>
+				<div class="g-col-12">
+					<section class="bg-white rounded-3 shadow grid p-3">
+						<div th:replace="fragments/http/films :: films"></div>
+						<div th:replace="fragments/http/pagination :: pagination"></div>
+					</section>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

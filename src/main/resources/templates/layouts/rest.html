@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head th:replace="fragments/header :: head"></head>
+	<body>
+		<div layout:fragment="content"></div>
+		<!-- <script src="https://unpkg.com/vue@next"></script> -->
+		<script src="https://unpkg.com/vue@3.2.26/dist/vue.global.js"></script>
+		<script th:src="@{/_dst/js/app.js}"></script>
+	</body>
+</html>

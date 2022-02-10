@@ -1,0 +1,39 @@
+<th:block th:fragment="navigation">
+	<aside class="offcanvas offcanvas-start border-0 py-3 ps-3" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasScrolling">
+		<div class="bg-dark bg-gradient h-100 rounded-3 shadow text-white position-relative overflow-hidden">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title"><i class="fas fa-film"></i> Film Database</h5>
+				<button type="button" class="btn-close d-sm-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<ul class="nav nav-pills flex-column">
+					<li class="nav-item">
+						<a class="nav-link text-white active" href="/"> <i class="fas fa-folder-open"></i> HTTP Film Requests </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="/rest"><i class="fab fa-soundcloud"></i> REST Film Requests</a>
+					</li>
+					<li class="nav-item">
+						<hr />
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#searchModal">
+							<i class="fas fa-search"></i> Search Films
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="offcanvas-footer position-absolute bottom-0 w-100 p-3">
+				<button
+					type="button"
+					class="btn btn-primary bg-gradient-primary w-100"
+					data-bs-toggle="modal"
+					data-bs-target="#filmModal"
+					data-bs-type="Add New Film"
+				>
+					Add Film
+				</button>
+			</div>
+		</div>
+	</aside>
+</th:block>

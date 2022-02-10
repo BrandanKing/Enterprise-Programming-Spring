@@ -1,0 +1,22 @@
+<nav class="g-col-12" th:fragment="pagination" th:if="${currentPage}">
+	<ul class="pagination">
+		<li class="page-item" th:if="${currentPage > 1}">
+			<a class="page-link" href="#" th:href="@{'?page=' + ${currentPage - 1}}">Previous</a>
+		</li>
+		<li class="page-item" th:if="${currentPage > 1}">
+			<a class="page-link" th:href="@{'?page=' + ${currentPage - 1}}">[[${currentPage -1}]]</a>
+		</li>
+		<li class="page-item active" aria-current="page">
+			<a class="page-link" th:href="@{'?page=' + ${currentPage}}">[[${currentPage}]]</a>
+		</li>
+		<li class="page-item" th:if="${totalPages > currentPage}">
+			<a class="page-link" th:href="@{'?page=' + ${currentPage + 1}}">[[${currentPage + 1}]]</a>
+		</li>
+		<li class="page-item" th:if="${totalPages > currentPage}">
+			<a class="page-link" th:href="@{'?page=' + ${currentPage + 1}}">Next</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="/">Reset</a>
+		</li>
+	</ul>
+</nav>

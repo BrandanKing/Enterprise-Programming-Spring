@@ -1,0 +1,24 @@
+@each $color, $values in $btn-colors-solid {
+	.btn-#{$color} {
+		@include button-variant(
+			map-get($values, 'background'),
+			map-get($values, 'border'),
+			map-get($values, 'color'),
+			map-get($values, 'hover-background'),
+			map-get($values, 'hover-border'),
+			map-get($values, 'hover-color')
+		);
+	}
+}
+
+@each $color, $values in $btn-colors-outline {
+	.btn-outline-#{$color} {
+		@include button-outline-variant(
+			map-get($values, 'color'),
+			map-get($values, 'hover-color'),
+			map-get($values, 'color'),
+			map-get($values, 'color'),
+			map-get($values, 'active-color')
+		);
+	}
+}

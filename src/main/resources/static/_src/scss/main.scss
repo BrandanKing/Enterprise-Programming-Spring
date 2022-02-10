@@ -1,0 +1,32 @@
+@import 'variables';
+@import 'bootstrap/bootstrap';
+// @import 'bootstrap-extend/buttons';
+
+@import 'fontawesome/fontawesome.scss';
+@import 'fontawesome/solid.scss';
+@import 'fontawesome/brands.scss';
+
+@import 'ui/offcanvas';
+
+@media (min-width: 1200px) {
+	.offcanvas + .main-content {
+		margin-left: 17.125rem;
+	}
+}
+
+.loader {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 150px;
+	height: 100%;
+	width: 100%;
+	color: $white;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+}
+
+.toast-container {
+	z-index: 1;
+}

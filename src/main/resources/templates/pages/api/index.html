@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/rest}">
+	<body>
+		<main id="app" layout:fragment="content">
+			<div class="loader" v-if="loading">
+				<i class="fas fa-spinner fa-pulse"></i>
+			</div>
+			<div th:replace="fragments/rest/navigation :: navigation"></div>
+			<section class="main-content position-relative max-height-vh-100 h-100 grid p-3">
+				<div class="toast-container position-absolute top-0 end-0 p-3" id="toast-container" style="z-index: 1"></div>
+				<div class="g-col-12">
+					<h1>Film Database</h1>
+				</div>
+				<div class="g-col-12">
+					<section class="bg-white rounded-3 shadow grid p-3">
+						<div class="bg-light rounded-3 p-3 g-col-12 g-col-lg-4 position-relative" v-for="film in paginated" :key="film.id">
+							<p class="fs-md mb-2">{{film.title}} <span class="fw-bold fs-sm">({{film.year}})</span></p>
+							<p class="mb-1 fs-sm">Director: <span class="fw-bold">{{film.director}}</span></p>
+							<p class="mb-1 fs-sm">Cast: <span class="fw-bold">{{film.stars}}</span></p>
+							<p class="fs-sm">Review: <span class="fw-bold">{{film.review}}</span></p>
+							<div class="position-absolute top-0 end-0">
+								<a class="btn btn-link text-danger text-decoration-none" @click="deleteFilm(film.id)">
+									<i class="fas fa-trash-alt"></i> Delete
+								</a>
+								<a class="btn btn-link text-decoration-none" @click="editFilm(film)"> <i class="fas fa-edit"></i> Edit </a>
+							</div>
+						</div>
+					</section>
+				</div>
+				<nav class="g-col-12">
+					<ul class="pagination">
+						<li class="page-item" v-if="pagination.currentPage > 0">
+							<a class="page-link" href="#" @click="prev" @click.prevent>Previous</a>
+						</li>
+						<li class="page-item" v-if="pagination.currentPage > 0"><a class="page-link" href="#">{{ pagination.currentPage }}</a></li>
+						<li class="page-item active" aria-current="page">
+							<a class="page-link" href="#" @click.prevent>{{ pagination.currentPage + 1 }}</a>
+						</li>
+						<li class="page-item" v-if="pagination.totalPages > pagination.currentPage">
+							<a class="page-link" href="#" @click.prevent>{{ pagination.currentPage + 2 }}</a>
+						</li>
+						<li class="page-item" v-if="pagination.totalPages > pagination.currentPage">
+							<a class="page-link" href="#" @click="next" @click.prevent>Next</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#" @click="getFilms(null)" @click.prevent>Reset</a>
+						</li>
+					</ul>
+				</nav>
+			</section>
+			<div th:replace="fragments/rest/searchModal :: search-modal"></div>
+			<div th:replace="fragments/rest/filmModal :: film-modal"></div>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<section
+	class="bg-light rounded-3 p-3 g-col-12 g-col-lg-4 position-relative"
+	th:fragment="films"
+	th:each="film : ${films}"
+>
+<p class="fs-md mb-2">[[${film.getTitle()}]] <span class="fw-bold fs-sm">([[${film.getYear()}]])</span></p>
+	<p class="mb-1 fs-sm">Director: <span class="fw-bold">[[${film.getDirector()}]]</span></p>
+	<p class="mb-1 fs-sm">Cast: <span class="fw-bold">[[${film.getStars()}]]</span></p>
+	<p class="fs-sm">Review: <span class="fw-bold">[[${film.getReview()}]]</span></p>
+	<div class="position-absolute top-0 end-0">
+		<form action="/delete" method="POST" class="d-inline-block">
+			<input type="hidden" name="filmID" th:value="${film.getId()}">
+			<button type="submit" class="btn btn-link text-danger text-decoration-none">
+					<i class="fas fa-trash-alt"></i> Delete
+			</button>
+		</form>
+		<button
+			type="button"
+			class="btn btn-link text-decoration-none"
+			data-bs-toggle="modal"
+			data-bs-target="#filmModal" data-bs-type="Update Film"
+			th:attr="data-bs-filmID=${film.getId()},data-bs-title=${film.getTitle()},data-bs-year=${film.getYear()},data-bs-director=${film.getDirector()},data-bs-stars=${film.getStars()},data-bs-review=${film.getReview()}"
+		>
+			<i class="fas fa-edit"></i> Edit </a>
+		</button>
+	</div>
+</section>
